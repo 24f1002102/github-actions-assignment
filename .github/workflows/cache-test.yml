@@ -11,11 +11,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Create cache folder
+        run: mkdir -p .cache/pip
+
       - name: prime-cache-605c345
         id: cache
         uses: actions/cache@v4
         with:
-          path: ~/.cache/pip
+          path: .cache/pip
           key: cache-605c345
 
       - name: Check cache result
