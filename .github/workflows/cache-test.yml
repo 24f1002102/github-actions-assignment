@@ -8,12 +8,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Step 2: Create a folder to cache
       - name: Create cache folder
-        run: mkdir -p .cache/pip
+        run: |
+          mkdir -p .cache/pip
+          echo "Folder created"
 
+      # Step 3: Cache dependencies
       - name: prime-cache-605c345
         id: cache
         uses: actions/cache@v4
@@ -21,5 +26,6 @@ jobs:
           path: .cache/pip
           key: cache-605c345
 
+      # Step 4: Show cache status
       - name: Check cache result
         run: echo "Cache hit: ${{ steps.cache.outputs.cache-hit }}"
