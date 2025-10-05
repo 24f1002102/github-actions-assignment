@@ -1,7 +1,7 @@
 name: Cache Dependencies
 
 on:
-  workflow_dispatch:  # Trigger manually
+  workflow_dispatch: # Trigger manually
 
 jobs:
   cache-job:
