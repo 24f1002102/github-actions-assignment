@@ -22,6 +22,6 @@ jobs:
           key: cache-605c345
 
       - name: prime-cache-605c345
-        run: echo "Cache hit: $CACHE_HIT"
+        run: echo "Cache hit $CACHE_HIT"
         env:
           CACHE_HIT: ${{ steps.cache.outputs['cache-hit'] }}
